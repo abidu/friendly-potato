@@ -1,0 +1,362 @@
+/* Reset de estilo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #31343C;
+    padding: 20px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header .logo img {
+    width: 200px;
+}
+
+header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+header .nav-links li {
+    margin-left: 30px;
+}
+
+header .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+header .nav-links li a:hover {
+    color: #f39c12;
+}
+
+/* Seção Hero com imagem de background */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('../images/background.jpeg');  /* Caminho correto da imagem */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Camada de sombra sobre o background */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);  /* Cor preta com opacidade de 30% */
+    z-index: 0;  /* Garante que a sombra fique atrás do conteúdo */
+}
+
+.hero-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Coloca o GIF atrás do conteúdo */
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;  /* Garante que o conteúdo fique sobre a sombra */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #e67e22;
+}
+
+/* Seção Sobre */
+.sobre {
+    display: flex;
+    align-items: center;
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sobre-texto {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.sobre-texto h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #31343C;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Seção Serviços */
+.servicos {
+    padding: 80px 20px;
+    background-color: #eee;
+    text-align: center;
+}
+
+.servicos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #31343C;
+}
+
+.servicos-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servico {
+    flex: 1;
+    min-width: 300px;
+    max-width: 30%;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.servico h3 {
+    font-size: 1.8rem;
+    color: #31343C;
+    margin-bottom: 10px;
+}
+
+.servico p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.servico:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Destaque para Família e Sucessões */
+.servico.destaque {
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.servico.destaque h3 {
+    color: white;
+}
+
+.servico.destaque p {
+    color: white;
+}
+
+/* Seção Depoimentos */
+.depoimentos {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.depoimentos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #31343C;
+}
+
+.depoimento {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.depoimento strong {
+    font-weight: 600;
+    color: #31343C;
+}
+
+/* Seção Contato */
+.contato {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.contato h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #31343C;
+}
+
+.contato form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contato form label {
+    font-size: 1.1rem;
+    color: #31343C;
+    margin-bottom: 8px;
+    text-align: left;
+    width: 100%;
+}
+
+.contato form input,
+.contato form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease;
+}
+
+.contato form input:focus,
+.contato form textarea:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+.contato form button {
+    background-color: #31343C;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contato form button:hover {
+    background-color: #f39c12;
+}
+
+/* Rodapé */
+footer {
+    background-color: #31343C;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+footer p {
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .servico {
+        width: 80%;
+    }
+
+    .sobre {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-texto {
+        padding-right: 0;
+        padding-bottom: 40px;
+    }
+
+    .sobre-imagem img {
+        max-width: 90%;
+    }
+
+    .servicos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
